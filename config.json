@@ -1,0 +1,22 @@
+{
+  "sourcePath": "_front/",
+  "publicPath": "public/assets/",
+  "modernizr" : {
+    "options": [
+        "mq",
+        "classes",
+        "setClasses",
+        "prefixed",
+        "hasEvent"
+      ],
+    "tests": [
+      "touchevents",
+      "pointerevents"
+    ]
+  },
+  "watchers": {
+    "sass/**/*.scss": ["styles"],
+        "img/**/*": ["images"],
+        "js/**/*.js": ["scripts"]
+  }
+}
