@@ -7,6 +7,6 @@ module.exports = function(){
     var $ = this.plugins;
     
     return gulp.src(config.sourcePath + 'assets/**/*.*')
-        .pipe($.debug({ title: "Copy:" }))
-        .pipe($.copy(config.publicPath, { prefix: config.sourcePath.replace(/^[\/\\]+|[\/\\]+$/gm,'').split(/[\/\\]/).length + 1 }));
+        .pipe($.copy(config.publicPath, { prefix: config.sourcePath.replace(/^[\/\\]+|[\/\\]+$/gm,'').split(/[\/\\]/).length + 1 }))
+        .pipe($.count("## files were copied.", { logFiles: true }));
 };

@@ -16,7 +16,7 @@
   },
   "watchers": {
     "sass/**/*.scss": ["styles"],
-        "img/**/*": ["images"],
-        "js/**/*.js": ["scripts"]
+    "img/**/*": ["images"],
+    "js/**/*.js": ["scripts"]
   }
 }

@@ -3,7 +3,8 @@ var runSequence = require('run-sequence');
 
 module.exports = function() {
     runSequence(
-        ['copy', 'images', 'styles', 'scripts'],
+        ['copy', 'images', 'styles', 'scripts', 'bower'],
+        'modernizr',
         'revisions',
         'clean'
     );

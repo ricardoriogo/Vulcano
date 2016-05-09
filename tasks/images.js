@@ -10,7 +10,7 @@ module.exports = function(){
 
     return gulp.src(config.sourcePath + 'img/**/*')
         .pipe($.newer(imgDest))
-        .pipe($.debug({ title: "Images:" }))
+        .pipe($.count('## images to be processed', { logFiles: true }))
         .pipe($.imagemin({
             progressive: true,
             svgoPlugins: [{removeViewBox: false}]
@@ -26,6 +26,5 @@ module.exports = function(){
             $.util.beep();
             this.emit('end');
         })
-        .pipe(gulp.dest(imgDest))
-        .pipe($.debug({ title: "Images Results:" }));
+        .pipe(gulp.dest(imgDest));
 };

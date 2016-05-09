@@ -11,7 +11,7 @@ module.exports = function(){
     if(config.watchers == undefined || config.watchers.length == 0) return;
 
     var cb = function(event) {
-        $.util.log('File ' + $.util.colors.bgCyan(event.path.replace(process.cwd() + path.sep, '')) + ' was ' + event.type + '!');
+        $.util.log('File ' + $.util.colors.bgCyan(event.path.replace(process.cwd() + path.sep, '')) + ' has been ' + event.type + '!');
     };
 
     for (var glob in config.watchers) {

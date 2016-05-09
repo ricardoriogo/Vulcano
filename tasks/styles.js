@@ -7,7 +7,7 @@ module.exports = function(){
     var $ = this.plugins;
 
     return gulp.src(config.sourcePath + 'sass/*.scss')
-        .pipe($.debug({ title: "Styles:" }))
+        .pipe($.count('## files selected'))
         .pipe($.if(!production, $.sourcemaps.init()))
         .pipe($.cssGlobbing({
             extensions: ['.scss']
@@ -35,5 +35,5 @@ module.exports = function(){
         .pipe($.if(!production, $.sourcemaps.write()))
         .pipe($.if(production, $.cssnano()))
         .pipe(gulp.dest(config.publicPath + 'css'))
-        .pipe($.debug({ title: "Styles Results:" }));
+        .pipe($.count('## files processed', {logFiles: true}));
 };

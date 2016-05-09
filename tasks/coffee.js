@@ -7,7 +7,7 @@ module.exports = function(production, debug) {
     var $ = this.plugins;
 
     return gulp.src(config.sourcePath + 'coffee/*.coffee')
-    .pipe($.debug({ title: "Scripts:" }))
+    .pipe($.count('## files will be processed'))
     .pipe($.if(!production, $.sourcemaps.init()))
     .pipe($.concat('main.coffee'))
     .pipe($.coffee({ bare:true }))
@@ -25,6 +25,5 @@ module.exports = function(production, debug) {
     .pipe(gulp.dest(config.sourcePath + 'js'))
     .pipe($.if(production, $.uglify()))
     .pipe($.if(!production, $.sourcemaps.write()))
-    .pipe(gulp.dest(config.publicPath + 'js'))
-    .pipe($.debug({ title: "Scripts Results:" }));
+    .pipe(gulp.dest(config.publicPath + 'js'));
 };
