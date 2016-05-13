@@ -1,10 +1,9 @@
-var gulp = require('gulp');
-
-module.exports = function(production, debug) {
+module.exports = function() {
 
     var production = this.production;
     var config = this.config;
     var $ = this.plugins;
+    var gulp = this.gulp;
     
     return gulp.src(config.publicPath + 'js/**/*.js')
         .pipe($.modernizr(config.modernizr))

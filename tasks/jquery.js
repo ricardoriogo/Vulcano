@@ -1,10 +1,9 @@
-var gulp = require('gulp');
-
-module.exports = function(production, debug){
+module.exports = function(){
 
     var production = this.production;
     var config = this.config;
     var $ = this.plugins;
+    var gulp = this.gulp;
     
     return $.jquery.src({
             release: 2, //jQuery 2 

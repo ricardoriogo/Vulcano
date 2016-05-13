@@ -1,5 +1,3 @@
-var gulp = require('gulp');
-
 var path = require('path');
 
 module.exports = function(){
@@ -7,11 +5,12 @@ module.exports = function(){
     var production = this.production;
     var config = this.config;
     var $ = this.plugins;
+    var gulp = this.gulp;
     
     if(config.watchers == undefined || config.watchers.length == 0) return;
 
     var cb = function(event) {
-        $.util.log('File ' + $.util.colors.bgCyan(event.path.replace(process.cwd() + path.sep, '')) + ' has been ' + event.type + '!');
+        $.util.log('The file ' + $.util.colors.bgCyan(event.path.replace(process.cwd() + path.sep, '')) + ' has been ' + event.type + '!');
     };
 
     for (var glob in config.watchers) {

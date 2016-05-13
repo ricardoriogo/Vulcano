@@ -1,13 +1,12 @@
-var gulp = require('gulp');
-
 var ftp = require('vinyl-ftp');
 var merge = require('merge-stream');
 
 module.exports = function(production, debug){
-    
+
     var production = this.production;
     var config = this.config;
     var $ = this.plugins;
+    var gulp = this.gulp;
     
     var log = function(command, status){
         if(/^100\%/.test(status)){

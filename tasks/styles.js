@@ -1,10 +1,9 @@
-var gulp = require('gulp');
-
 module.exports = function(){
 
     var production = this.production;
     var config = this.config;
     var $ = this.plugins;
+    var gulp = this.gulp;
 
     return gulp.src(config.sourcePath + 'sass/*.scss')
         .pipe($.count('## files selected'))

@@ -1,5 +1,3 @@
-var gulp = require('gulp');
-
 var fs = require('fs');
 var path    = require('path');
 var through = require('through2');
@@ -9,6 +7,7 @@ module.exports = function() {
     var production = this.production;
     var config = this.config;
     var $ = this.plugins;
+    var gulp = this.gulp;
     
     var manifestFileName = config.revisionFileName || "rev-manifest.json";
     var manifest = config.publicPath + manifestFileName;
