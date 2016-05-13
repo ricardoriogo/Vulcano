@@ -1,4 +1,3 @@
-var gulp    = require('gulp');
 var fs      = require('fs');
 var rimraf  = require('rimraf');
 var path    = require('path');
@@ -9,6 +8,7 @@ module.exports = function() {
     var production = this.production;
     var config = this.config;
     var $ = this.plugins;
+    var gulp = this.gulp;
     
     function cleaner() {
         return through.obj(function(file, enc, cb){
