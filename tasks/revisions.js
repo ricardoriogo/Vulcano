@@ -27,7 +27,7 @@ module.exports = function() {
     
     return gulp.src(src, {base: config.publicPath.replace(/^[\/\\]+|[\/\\]+$/gm,'')})
         .pipe(filter())
-        .pipe($.debug({ title: "Revisions:" }))
+        .pipe($.count('## files found to versioning'))
         .pipe(gulp.dest(config.publicPath + '/build'))  // copy original assets to build dir
         .pipe($.rev())
         .pipe(gulp.dest(config.publicPath))  // write rev'd assets to build dir
